@@ -14,12 +14,11 @@ $cfg = array(
     
     'date_format' => 'G:i d.m.Y',
     
-    'text_ban_forever' => 'Навсегда',
+    'text_ban' => 'Навсегда',
     
     'text_reason_not' => 'Нарушение правил проекта',
     
     'page_output'      => 10, 
-    
     
     'page_btn'        => 6, 
     

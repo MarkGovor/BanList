@@ -1,0 +1,49 @@
+
+#bl {
+	width: 800;
+	font-size: 14;
+	font-family: arial;
+}
+
+.bl-table-header td {
+	background: #F7F7F7;
+	color: #000;
+	font-weight: bold;
+}
+
+.bl-table td {
+	padding: 15;
+	border-bottom: 1px solid #F0F0F0;
+}
+
+.bl-pages {
+	width: 350;
+	margin: 0 auto;
+}
+
+.bl-pages a {
+	color: #000;
+	text-decoration: none;
+}
+
+input {
+	outline: 0;
+}
+
+.input {
+	border: 1px solid #DFDFDF;
+	width: 200;
+	height: 35;
+	padding: 5;
+	font-size: 15;
+}
+
+.button {
+  
+	height: 35;
+	width: 200;
+	background: #F1F1F1;
+	border: 1px solid #ECECEC;
+	padding: 5;
+	font-size: 15;
+}

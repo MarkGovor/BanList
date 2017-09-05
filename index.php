@@ -2,10 +2,6 @@
 
 require 'config.php';
 
-if( !defined( 'DATALIFEENGINE' ) ) {
-    die( "Hacking attempt!" );
-}
-
 if ( isset($_POST['nickname']{3}) ) {
 		$search  = "WHERE `name` = '".($_POST['nickname'])."'";
                 
@@ -30,7 +26,7 @@ while ($row = mysqli_fetch_array($query_banlist)) {
 				<td>'.$row['admin'].'</td>
 				<td>'.($row['reason'] ? $row['reason'] : $cfg['text_reason_not']).'</td>
 				<td>'.date($cfg['date_format'], $row['time']).'</td>
-				<td>'.($row['temptime'] ? date($cfg['date_format'], $row['temptime']) : $cfg['text_ban_forever'].'</font>').'</td>
+				<td>'.($row['temptime'] ? date($cfg['date_format'], $row['temptime']) : $cfg['text_ban'].'</font>').'</td>
 			</tr>
 		';	
 }
@@ -69,29 +65,30 @@ if ( $page_last > 0 ) {
 
 
 <link rel="stylesheet" type="text/css" href="templates/style.css">
-<div id="tn">
-    
-    	<? if ( $cfg['search_on'] ) { ?>
+
+<div id="bl">
+
+	<?php if ( $cfg['search_on'] ) { ?>
 		<form method="POST">
 			<input type="text" name="nickname" class="input" placeholder="Ник игрока" required/>
 			<input type="submit" class="button" value="Найти"/>
 		</form>
 		
-	<? } ?>
-    
-    
-<table class="table_b1" >
-    
-    <tr class="table_header_b1">
-                        <td width="160">Игрок</td>
-			<td width="160">Заблокировал</td>
-			<td width="160">Причина</td>
-			<td width="160">Дата бана</td>
-			<td width="160">Дата разбана</td>
-                        
-                        <?php echo $bn?>
-          
-    </tr>
-</table>
-    <?php echo $error.'<br/>'.$page?>
+	<?php  } ?>
+	
+	<table class="bl-table" cellspacing="0">
+		<tr class="bl-table-header">
+			<td width="120">Игрок</td>
+			<td width="120">Заблокировал</td>
+			<td width="120">Причина</td>
+			<td width="120">Дата бана</td>
+			<td width="120">Дата разбана</td>
+		</tr>
+		
+		<?php echo $bn?>
+		
+	</table>
+	
+	<?=$error.'<br/>'.$page?>
+	
 </div>
